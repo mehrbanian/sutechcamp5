@@ -7,19 +7,22 @@
 </head>
 
 <body>
-    <form>
+    <form method="POST" autocomplete="on">
         <label for="fname">first name:</label> <br>
-        <input type="text" name="fname" id="fname"> <br>
+        <input placeholder="enter your first name" autocomplete="name" type="text" name="fname" id="fname" autofocus>
+        <br>
+        <label for="lname">last name:</label> <br>
+        <input placeholder="enter your last name" type="text" name="lname" id="lname" required> <br>
 
         <label><b>gender:</b></label> <br>
-        <input type="radio" name="gender" id="male">
+        <input type="radio" name="gender" id="male" value="male">
         <label for="male">male</label>
         <br>
-        <input type="radio" name="gender" id="female">
+        <input type="radio" name="gender" id="female" value="female">
         <label for="female">female</label>
 
         <br>
-        <input type="checkbox" name="accept_rules" id="rules">
+        <input type="checkbox" name="accept_rules" id="rules" value="1">
         <label for="rules">I accept rules.</label>
         <br>
         <input type="checkbox" name="accept_rules2" id="rules2">
@@ -29,16 +32,17 @@
         <!-- Drop-down list (select list) -->
         <label for="city">city:</label>
         <select name="city" id="city">
-            <option>shiraz</option>
-            <option>tehran</option>
-            <option>esfahan</option>
-            <option>mashhad</option>
-            <option>kerman</option>
+            <option value="0" selected="true" disabled="disabled">Please choose a city</option>
+            <option value="1">shiraz</option>
+            <option value="2">tehran</option>
+            <option value="3">esfahan</option>
+            <option value="4">mashhad</option>
+            <option value="5">kerman</option>
         </select>
 
         <br>
         <label for="car">what is your car:</label>
-        <select name="car" id="car">
+        <select name="car" id="car" multiple>
             <optgroup label="German cars">
                 <option>Audi</option>
             </optgroup>
@@ -47,7 +51,60 @@
                 <option>Samand</option>
             </optgroup>
         </select>
+
+        <br>
+        <label for="browser_list">what's your browser?</label>
+        <input list="browsers" name="browser" id="browser_list">
+        <datalist id="browsers">
+            <option value="Firefox">
+            <option value="Chrome">
+            <option value="Opera">
+        </datalist>
+
+        <br>
+        <label for="address">Address:</label> <br>
+        <textarea name="address" id="address" rows="5" cols="30"></textarea>
+
+        <br>
+        <label for="streetno">Street No.:</label>
+        <input type="number" max="10" min="5" name="streetno" id="streetno">
+
+        <br>
+        <input type="submit" value="sabt">
+        <input type="reset">
+        <input type="button" value="I do nothing">
+
+        <br>
+        <button type="submit">
+            sabt
+            <!-- <img src="https://picsum.photos/100"> -->
+        </button>
+        <button type="reset">Reset</button>
+        <button type="button">I do nothing</button>
     </form>
+    <br>
+    <br>
+
+    <!-- more inputs -->
+
+    <form enctype="multipart/form-data">
+        <label for="email2">email:</label> <br>
+        <input placeholder="enter your email" autocomplete="email" type="text" name="email2" id="email2" autofocus>
+        <br>
+        <input type="hidden" name="planno" value="1">
+        <lebel for="email">email:</lebel> <br>
+        <input type="email" name="email" id="email" placeholder="enter your email">
+        <br>
+        <label for="pass">password</label> <br>
+        <input type="password" name="pass" id="pass"> <br>
+        <input type="search"> <br>
+        <input type="file" name="cartmelli">
+        <br>
+        <button type="submit">
+            sabt
+        </button>
+    </form>
+
 </body>
 
 </html>
