@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+    <style>
+        .box {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            margin-left: 10px;
+        }
+
+        /* .box>p {
+            color: white;
+        } */
+
+        .box p {
+            color: white;
+        }
+
+        .x1.x2 {
+            font-size: 32px;
+        }
+
+        .coral-back {
+            background-color: coral;
+        }
+
+        .blue-back {
+            background-color: blue;
+        }
+
+        .red-back {
+            background-color: red;
+        }
+
+        .wrapper {
+            margin: 30px;
+        }
+
+        p {
+            color: darkblue;
+        }
+    </style>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="box coral-back">
+            <p>box 1</p>
+            <div>
+                <div>
+                    <p>para 2</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="box blue-back">
+            <p>box 2</p>
+            <div>
+                <p>para 2</p>
+            </div>
+        </div>
+
+        <div class="box red-back">
+            <p>box 3</p>
+            <div>
+                <p>para 2</p>
+            </div>
+        </div>
+    </div>
+    <p class="x1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, earum quasi! Ad amet, debitis dolorum ea quod
+        dolorem officiis nam a ipsum repudiandae sit rem, iure quidem ratione alias laboriosam.
+    </p>
+    <p class="x1 x2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, earum quasi! Ad amet, debitis dolorum ea quod
+        dolorem officiis nam a ipsum repudiandae sit rem, iure quidem ratione alias laboriosam.
+    </p>
+</body>
+
+</html>

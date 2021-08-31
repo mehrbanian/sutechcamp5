@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Max width</title>
+    <style>
+        main {
+            background-color: rosybrown;
+            padding: 20px;
+        }
+
+        main>p {
+            background-color: white;
+            padding: 5px;
+        }
+
+        main>p:nth-child(1) {
+            /* width: 400px; */
+            max-width: 400px;
+            /* min-width: 500px; */
+        }
+
+        main>p:nth-child(2) {
+            width: 400px;
+        }
+    </style>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <main>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae magni saepe illo voluptatibus
+            consectetur odio sit repellat dolore eveniet voluptate animi, enim dolor neque dignissimos a consequuntur!
+            Facilis, ipsum quae.
+        </p>
+
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias aperiam dolor quae molestiae, non ducimus
+            eligendi deleniti, magni numquam quibusdam debitis earum sequi et aliquid pariatur ipsum, culpa officiis
+            eum.
+        </p>
+    </main>
+</body>
+
+</html>
