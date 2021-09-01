@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid 3</title>
+    <style>
+        .wrapper {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-areas:
+                ". box1 box2"
+                "box3 box1 ."
+                ". box4 box4";
+            grid-gap: 10px;
+        }
+
+        .wrapper>div {
+            background: rgb(223, 223, 223);
+            padding: 10px;
+        }
+
+        .wrapper>div:nth-child(odd) {
+            background: rgb(168, 168, 168);
+        }
+
+        .box1 {
+            grid-area: box1;
+        }
+
+        .box2 {
+            grid-area: box2;
+        }
+
+        .box3 {
+            grid-area: box3;
+        }
+
+        .box4 {
+            grid-area: box4;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="box1">
+            Lorem
+        </div>
+        <div class="box2">
+            Lorem
+        </div>
+        <div class="box3">
+            Lorem
+        </div>
+        <div class="box4">
+            Lorem
+        </div>
+    </div>
+</body>
+
+</html>
