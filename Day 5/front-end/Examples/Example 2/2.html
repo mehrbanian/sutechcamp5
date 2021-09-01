@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ثبت نام</title>
+
+    <style>
+        *,
+        body {
+            font-family: Shabnam;
+        }
+
+        .form-container>form {
+            margin: auto;
+        }
+
+        .form-element {
+            margin-bottom: 15px;
+        }
+
+        .form-element>label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 15px;
+        }
+
+        .form-element>label>span {
+            color: red;
+        }
+
+        .d-inline-block {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body dir="rtl">
+    <form action="">
+        <div class="form-element">
+            <label for="fullname">نام و نام خانوادگی <span>*</span></label>
+            <input type="text" name="fullname" id="fullname" placeholder="مثال: علیرضا احمدی" required>
+        </div>
+        <div class="form-element">
+            <label for="phonenum">شماره تماس <span>*</span></label>
+            <input type="text" name="phonenum" id="phonenum" placeholder="مثال: 09305005050" required>
+        </div>
+        <div class="form-element">
+            <label for="bdate">تاریخ تولد</label>
+            <input type="date" name="bdate" id="bdate">
+        </div>
+        <div class="form-element">
+            <label for="email">ایمیل <span>*</span></label>
+            <input type="email" name="email" id="email" placeholder="مثال: ahmadi@gmail.com" required>
+        </div>
+        <div class="form-element">
+            <label for="pass">رمزعبور <span>*</span></label>
+            <input type="password" name="pass" id="pass" placeholder="یک رمزعبور وارد کنید..." required>
+        </div>
+
+        <button type="submit">ثبت نام</button>
+    </form>
+</body>
+
+</html>

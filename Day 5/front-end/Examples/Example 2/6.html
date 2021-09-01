@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ثبت نام</title>
+
+    <!-- 
+        border: none;
+     -->
+    <style>
+        *,
+        body {
+            font-family: Shabnam;
+        }
+
+        body {
+            background: rgb(13 147 255);
+        }
+
+        .example-form {
+            background: #fff;
+            width: 200px;
+            padding: 30px;
+            border-radius: 5px;
+            margin: auto;
+            margin-top: 50px;
+        }
+
+        input[type=text],
+        input[type=date],
+        input[type=password],
+        input[type=email] {
+            display: block;
+            border: 1px solid rgb(206, 206, 206);
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .form-container>form {
+            margin: auto;
+        }
+
+        .form-element {
+            margin-bottom: 15px;
+        }
+
+        .form-element>label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 15px;
+        }
+
+        .form-element>label>span {
+            color: red;
+        }
+
+        .d-inline-block {
+            display: inline-block;
+        }
+
+        .btn {
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .submit-btn {
+            background-color: rgb(61, 168, 255);
+            color: #fff;
+        }
+
+        .reset-btn {
+            background-color: rgb(233, 233, 233);
+            color: #000;
+        }
+
+        a.forget-password {
+            font-size: 14px;
+            display: block;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body dir="rtl">
+    <div class="forms-container">
+
+        <form class="example-form">
+            <div class="form-element">
+                <label for="">ایمیل <span>*</span></label>
+                <input type="email" name="" id="" placeholder="ایمیل را اینجا وارد کنید..." required>
+            </div>
+            <div class="form-element">
+                <label for="">رمزعبور <span>*</span></label>
+                <input type="password" name="" id="" placeholder="رمزعبور را اینجا وارد کنید..." required>
+            </div>
+
+            <button type="submit" class="btn submit-btn">ورود</button>
+            <a href="#" class="forget-password">فراموشی رمزعبور!</a>
+        </form>
+        <form class="example-form">
+            <div class="form-element">
+                <label for="fullname">نام و نام خانوادگی <span>*</span></label>
+                <input type="text" name="fullname" id="fullname" placeholder="مثال: علیرضا احمدی" required>
+            </div>
+            <div class="form-element">
+                <label for="phonenum">شماره تماس <span>*</span></label>
+                <input type="text" name="phonenum" id="phonenum" placeholder="مثال: 09305005050" required>
+            </div>
+            <div class="form-element">
+                <label for="bdate">تاریخ تولد</label>
+                <input type="date" name="bdate" id="bdate">
+            </div>
+            <div class="form-element">
+                <label for="email">ایمیل <span>*</span></label>
+                <input type="email" name="email" id="email" placeholder="مثال: ahmadi@gmail.com" required>
+            </div>
+            <div class="form-element">
+                <label for="pass">رمزعبور <span>*</span></label>
+                <input type="password" name="pass" id="pass" placeholder="یک رمزعبور وارد کنید..." required>
+            </div>
+
+            <button type="submit" class="btn submit-btn">ثبت نام</button>
+            <button type="reset" class="btn reset-btn">پاک کن!</button>
+        </form>
+    </div>
+</body>
+
+</html>
