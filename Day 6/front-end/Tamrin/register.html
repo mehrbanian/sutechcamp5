@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ورود</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body dir="rtl">
+    <video autoplay muted loop poster="img/poster.jpg" class="back-footage">
+        <source src="videos/footage.mp4" type="video/mp4">
+    </video>
+    <div class="back-overlay"></div>
+    <main>
+        <div class="card register">
+            <div class="content">
+                <h1>ثبت نام</h1>
+                <p>برای ایجاد یک حساب کاربری اطلاعات زیر را وارد نمایید.</p>
+                <form class="grid-container" action="">
+                    <div>
+                        <input type="text" name="fullname" id="fullname" placeholder="نام و نام خانوادگی">
+                    </div>
+
+                    <div>
+                        <input type="email" name="email" id="email" placeholder="ایمیل">
+                        <small class="form-error">این ایمیل قبلا ثبت شده است.</small>
+                    </div>
+                    <div>
+                        <input type="password" name="password" id="password" placeholder="رمزعبور">
+                        <small class="form-error">رمزعبور با تکرار آن مطابقت ندارد</small>
+                    </div>
+                    <div>
+                        <input type="password" name="repassword" id="repassword" placeholder="تکرار رمزعبور">
+                    </div>
+                    <button type="submit">ثبت اطلاعات</button>
+                </form>
+
+                <div class="forget-password">حساب دارید؟ <a href="#">وارد شوید!</a></div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

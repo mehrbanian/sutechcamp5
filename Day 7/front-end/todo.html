@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تودو!</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body dir="rtl">
+    <div class="page-container">
+        <div class="flex-container">
+            <header>
+                <div class="header-info">
+                    <h1>تودو!</h1>
+                    <div class="user-info">خوش آمدید، عباس مهربانیان</div>
+                </div>
+                <a href="#" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                </a>
+            </header>
+
+            <form action="calculate">
+                <div class="input-wrapper">
+                    <input type="text" name="todo" id="todo" placeholder="یک کار جدید اضافه کن ;)" class="new-todo">
+                </div>
+                <button type="submit" class="add-todo">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </form>
+
+
+            <div class="todo-list-container">
+                <ul class="list">
+                    <li class="todo-item">
+                        <div class="desc">
+                            یک متن برای انجام دادن.
+                        </div>
+                        <div class="options">
+                            <button class="todo-btn">
+                                <i class="far fa-trash-alt"></i>
+                            </button>
+                            <button class="todo-btn">
+                                <i class="far fa-edit"></i>
+                            </button>
+                            <button class="todo-btn">
+                                <i class="fas fa-check"></i>
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

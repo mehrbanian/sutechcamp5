@@ -1,0 +1,222 @@
+body, * {
+    font-family: Shabnam;
+}
+body {
+    margin: 0;
+}
+
+.back-footage {
+    position: fixed;
+    left: 0;
+    top: 0;
+    /* solution 1: */
+    /* min-width: 100%; 
+    min-height: 100%; */
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+}
+
+.back-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.menu-container {
+    display: flex;
+    flex-flow: wrap column;
+    margin-left: 20px;
+}
+
+.card {
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+}
+
+.card.login {
+    width: 375px;
+}
+
+.menu-container > .profile {
+    width: 100px;
+}
+
+.menu-container > .menu {
+    height: 350px;
+}
+
+/* .card:before {
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+} */
+
+.card > .content {
+    position: relative;
+    padding: 50px;
+    color: rgb(63, 63, 63);
+}
+
+.content > h1, p {
+    margin-top: 0;
+}
+
+.content > h1 {
+    text-align: center;
+}
+
+.content > p {
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.content > form input {
+    display: block;
+    border: none;
+    border-bottom: 1px solid #cbcbcb;
+    margin-bottom: 10px;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    width: 100%;
+}
+
+.content > form input:focus {
+    outline: none;
+    border-bottom: 1px solid #000;
+}
+
+.content > form input:focus::placeholder {
+    color: #000;
+}
+
+.content > form button {
+    width: 100%;
+    padding: 15px;
+    font-family: Shabnam;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    background: #c7a480;
+    font-size: 17px;
+    /* background: #373B44;
+    background: -webkit-linear-gradient(to right, #4286f4, #373B44);
+    background: linear-gradient(to left, #c7a480, #56859b); */
+    margin: 20px 0;
+}
+
+::placeholder {
+    font-size: 15px;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    font-size: 15px;
+}
+
+::-ms-input-placeholder {
+    font-size: 15px;
+}
+
+.form-error {
+    color: red;
+    position: relative;
+    top: -5px;
+}
+
+.forget-password {
+    text-align: center;
+}
+
+.forget-password > a{
+    text-decoration: none;
+}
+
+card.register {
+    width: 700px;
+}
+
+.grid-container {
+    display: grid;
+    column-gap: 25px;
+    grid-auto-columns: minmax(auto, 275px);
+}
+
+.card.register button {
+    grid-column: 1/3;
+}
+
+
+.userbar {
+    margin-left: 30px;
+}
+
+.userbar .avatar {
+    margin: auto;
+    display: block;
+    width: 80px;
+    border-radius: 30px;
+    position: relative;
+}
+
+.avatar:before {
+    content: '';
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.profile > .content {
+    padding: 10px;
+}
+
+/* .task-container .task {
+    background: #cab72c;
+    display: relative;
+    transform: rotate(-5deg);
+    padding: 20px;
+    width: 90px;
+    height: 90px;
+    overflow: hidden;
+    display: inline-block;
+    margin-left: 10px;
+    margin-bottom: 20px;
+} */
+
+.tasks {
+    height: 500px;
+}
+
+.tasks .task {
+    background-color: #cbcbcb;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 400px;
+}
+
+.task-container .task > .dot {
+    position: absolute;
+}
