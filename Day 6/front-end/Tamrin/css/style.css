@@ -60,17 +60,6 @@ main {
     height: 350px;
 }
 
-/* .card:before {
-    background-color: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(10px);
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-} */
-
 .card > .content {
     position: relative;
     padding: 50px;
@@ -118,9 +107,6 @@ main {
     color: #fff;
     background: #c7a480;
     font-size: 17px;
-    /* background: #373B44;
-    background: -webkit-linear-gradient(to right, #4286f4, #373B44);
-    background: linear-gradient(to left, #c7a480, #56859b); */
     margin: 20px 0;
 }
 
@@ -163,60 +149,4 @@ card.register {
 
 .card.register button {
     grid-column: 1/3;
-}
-
-
-.userbar {
-    margin-left: 30px;
-}
-
-.userbar .avatar {
-    margin: auto;
-    display: block;
-    width: 80px;
-    border-radius: 30px;
-    position: relative;
-}
-
-.avatar:before {
-    content: '';
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-.profile > .content {
-    padding: 10px;
-}
-
-/* .task-container .task {
-    background: #cab72c;
-    display: relative;
-    transform: rotate(-5deg);
-    padding: 20px;
-    width: 90px;
-    height: 90px;
-    overflow: hidden;
-    display: inline-block;
-    margin-left: 10px;
-    margin-bottom: 20px;
-} */
-
-.tasks {
-    height: 500px;
-}
-
-.tasks .task {
-    background-color: #cbcbcb;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    padding: 10px;
-    width: 400px;
-}
-
-.task-container .task > .dot {
-    position: absolute;
 }
