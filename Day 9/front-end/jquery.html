@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery</title>
+    <style>
+        #sina {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            color: #fff;
+        }
+
+        #sina2 {
+            display: none;
+        }
+
+        #box {
+            margin-top: 20px;
+            width: 200px;
+            height: 200px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="sina">Sina</div>
+    <div id="sina2">Sina2</div>
+    <button type="button">Remove sina</button>
+
+    <div id="box" class="red"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/myscript.js"></script>
+    <script>
+        $('document').ready(function () {
+            $('button').click(() => {
+                $('#sina').delay(1000).fadeOut();
+                $('#sina2').delay(2000).fadeIn();
+            });
+
+            $('#box').mouseenter(function () {
+                $('#box').removeClass('red').addClass('blue');
+            });
+
+            $('#box').mouseleave(function () {
+                $(this).removeClass('blue').addClass('red');
+            });
+
+        });
+
+        // $(function() {
+
+        // });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: cyan;
+            /* animation: myanimation 4s;
+            animation-iteration-count: 3; */
+        }
+
+        .use-myanimation {
+            animation: myanimation 4s;
+            animation-iteration-count: 3;
+        }
+
+        /* @keyframes myanimation {
+            from {
+                background-color: cyan;
+            }
+
+            to {
+                background-color: darkblue;
+            }
+        } */
+
+        @keyframes myanimation {
+            25% {
+                width: 300px;
+                height: 100px;
+            }
+
+            50% {
+                width: 300px;
+                height: 300px;
+            }
+
+            75% {
+                width: 100px;
+                height: 300px;
+            }
+
+            100% {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box use-myanimation">
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $('document').ready(function () {
+            var box = $('.box');
+            box.animate({ width: '300px' }, "slow");
+            box.animate({ height: '300px' }, "slow");
+            box.animate({ width: '100px' }, "slow");
+            box.animate({ height: '100px' }, "slow");
+        });
+    </script>
+</body>
+
+</html>

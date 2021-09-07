@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show password</title>
+
+    <style>
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <input type="password" id="pass">
+        <label for="pass" class="show">SHOW</label>
+        <label for="pass" class="hide">HIDE</label>
+    </form>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $('document').ready(function () {
+            $('.show, .hide').click(function () {
+                if ($('#pass').attr('type') == 'password') {
+                    $('#pass').attr('type', 'text');
+                    $('#pass').parent().find('label.show').hide();
+                    $('#pass').parent().find('label.hide').show();
+                } else {
+                    $('#pass').attr('type', 'password');
+                    $('#pass').parent().find('label.show').show();
+                    $('#pass').parent().find('label.hide').hide();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
