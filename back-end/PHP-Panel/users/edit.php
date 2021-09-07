@@ -73,14 +73,14 @@ $user = $result->fetch_assoc();
                             <div class="form-group">
                                 <label>نام</label>
                                 <input type="text" name="uname" class="form-control" required
-                                       placeholder="مثل: امید رجائی" value="<?= $user['name'] ?>">
+                                       placeholder="مثل: امید" value="<?= $user['name'] ?>">
                             </div>
 
                             <div class="form-group">
                                 <label>ایمیل</label>
                                 <div>
                                     <input type="email" name="email" class="form-control" required
-                                           placeholder="مثل: omid@rajaei.net" value="<?= $user['email'] ?>">
+                                           placeholder="مثل: omid@gmail.com" value="<?= $user['email'] ?>">
                                 </div>
                             </div>
 

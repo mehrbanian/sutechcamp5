@@ -77,7 +77,7 @@ require_once '../inc/configs.php';
                                 <label>ایمیل</label>
                                 <div>
                                     <input type="email" name="email" class="form-control" required
-                                           placeholder="مثل: omid@rajaei.net">
+                                           placeholder="مثل: omid@gmail.com">
                                 </div>
                             </div>
 

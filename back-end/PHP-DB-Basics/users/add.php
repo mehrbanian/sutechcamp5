@@ -189,14 +189,14 @@ require_once '../configs.php';
                                     <div class="form-group">
                                         <label>نام</label>
                                         <input type="text" name="uname" class="form-control" required
-                                               placeholder="مثل: امید رجائی">
+                                               placeholder="مثل: امید">
                                     </div>
 
                                     <div class="form-group">
                                         <label>ایمیل</label>
                                         <div>
                                             <input type="email" name="email" class="form-control" required
-                                                   placeholder="مثل: omid@rajaei.net">
+                                                   placeholder="مثل: omid@gmail.com">
                                         </div>
                                     </div>
 
