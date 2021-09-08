@@ -1,0 +1,72 @@
+
+1. include all iterative static sections (HTML, CSS, JS)
+2. pass variable through include
+3. <?php echo $simpleVar ?>  === <?= $simpleVar ?>
+
+4. (Do) require_once 'admin_auth.php' for all panel pages
+
+5. review: user add form and processes (panel/add.php)
+
+** Exercise: use `select` input for role choose in add.php and process it in SQL Query
+
+6. review: user list loop 			(panel/index.php)
+7. add edit & delete links with user id parameter
+
+8. CODE: delete.php
+9. CODE: edit.php
+
+** Exercise: show process status in index.php after redirect 
+           hint: isset($_GET['']) & use it :) and style it.
+
+** Exercise: edit.php: handle two password field
+
+
+
+///// DB Connect (mysqli oop) Reviews: ------------------------------
+
+$conn = new mysqli($db_hostname, $db_username, $db_password, $db_database);
+
+--- pure SQL:
+$result = $conn->query("SELECT name, email FROM users");
+
+-----
+--- SQL with Input:
+$stmt = $conn->prepare("SELECT password FROM users WHERE email=?");
+$stmt->bind_param("s", $username); // s i d
+$run_status = $stmt->execute();  // true || false
+
+$stmt->affected_rows;
+
+$result = $stmt->get_result();
+
+$result->num_rows;
+$result->fetch_array();
+$result->fetch_assoc();
+$result->fetch_all();
+
+-----
+--- Close:
+$stmt->close();
+$conn->close();
+
+
+
+///// SQL Reviews: ------------------------------
+--- create table:
+"CREATE TABLE `sutechcamp`.`users` ( `id` INT UNSIGNED NOT NULL AUTO_INCREMENT , `email` TINYTEXT NOT NULL , `password` TEXT NOT NULL , `name` TINYTEXT NOT NULL , `role` TINYINT NOT NULL , PRIMARY KEY (`id`), UNIQUE (`id`, `email`)) ENGINE = InnoDB;"
+"ALTER TABLE `users` ADD UNIQUE( `email`);"
+
+--- insert new data:
+"INSERT INTO users (email, password, name, role) VALUES(?, ?, ?, 1);"
+
+--- select data:
+"SELECT * FROM users"
+"SELECT name, email FROM users"
+"SELECT password FROM users WHERE email=?"
+
+--- update data:
+"UPDATE users SET email=?, name=? WHERE id=?"
+
+--- delete data:
+"DELETE FROM users WHERE id=?"
+
