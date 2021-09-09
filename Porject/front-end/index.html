@@ -8,6 +8,7 @@
     <title>صفحه اصلی</title>
     <link rel="stylesheet" href="css/bootstrap.rtl.min.css">
     <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/custom.css">
 </head>
 
@@ -27,7 +28,41 @@
                     </div>
                 </div>
                 <div class="col-6 header-left">
-
+                    <div class="user-bar">
+                        <div class="avatar">
+                            <img src="img/profile.jpg" alt="">
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="user-info">
+                            <div class="dropdown">
+                                <a class="usermenu" href="#" type="button" id="usermenu" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <span>عباس مهربانیان</span>
+                                    <i class="fas fa-sort-down"></i>
+                                </a>
+                                <ul class="dropdown-menu animate__animated animate__fadeInUp animate__faster"
+                                    aria-labelledby="usermenu">
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="fas fa-user-alt"></i>
+                                            <span>مشاهده پروفایل</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="fas fa-sign-out-alt"></i>
+                                            <span>خروج از حساب</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="account-type">اشتراک عادی</div>
+                        </div>
+                    </div>
+                    <div class="notif-bell">
+                        <i class="fas fa-bell"></i>
+                        <div class="new"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -58,17 +93,110 @@
                         <a class="nav-link" href="#">دسته بندی‌ها</a>
                     </li>
                 </ul>
-                <form class="d-flex">
-                    <button class="btn-upgrade" type="submit">
-                        <i class="fas fa-crown"></i>
-                        <span>ویژه شوید!</span>
-                    </button>
-                </form>
+                <button class="btn-upgrade" type="submit">
+                    <i class="fas fa-crown"></i>
+                    <span>ویژه شوید!</span>
+                </button>
             </div>
         </div>
     </nav>
 
-    <main></main>
+    <main>
+        <div class="container">
+            <div class="posts-container">
+                <div class="row">
+                    <div class="col-12 mb-5 col-md-6 col-lg-4">
+                        <div class="card post">
+                            <div class="post-img">
+                                <img src="img/post.jpg" class="card-img-top" alt="...">
+                                <div class="overlay"></div>
+                            </div>
+                            <img src="img/profile.jpg" class="article-writer" alt="نوسینده مطلب">
+                            <div class="card-body">
+                                <h5 class="card-title">یک عنوان تستی برای این مطلب</h5>
+                                <p class="card-text">
+                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                                    گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و
+                                    برای شرایط فعلی...
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mb-5 col-md-6 col-lg-4">
+                        <div class="card post">
+                            <div class="post-img">
+                                <img src="img/post.jpg" class="card-img-top" alt="...">
+                                <div class="overlay"></div>
+                            </div>
+                            <img src="img/profile.jpg" class="article-writer" alt="نوسینده مطلب">
+                            <div class="card-body">
+                                <h5 class="card-title">یک عنوان تستی برای این مطلب</h5>
+                                <p class="card-text">
+                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                                    گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و
+                                    برای شرایط فعلی...
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mb-5 col-md-6 col-lg-4">
+                        <div class="card post">
+                            <div class="post-img">
+                                <img src="img/post.jpg" class="card-img-top" alt="...">
+                                <div class="overlay"></div>
+                            </div>
+                            <img src="img/profile.jpg" class="article-writer" alt="نوسینده مطلب">
+                            <div class="card-body">
+                                <h5 class="card-title">یک عنوان تستی برای این مطلب
+                                    <span class="badge rounded-pill bg-danger">رایگان!</span>
+                                </h5>
+                                <p class="card-text">
+                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                                    گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و
+                                    برای شرایط فعلی...
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#">
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li class="page-item active">
+                        <a class="page-link" href="#">
+                            1
+                        </a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">
+                            2
+                        </a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link">
+                            ...
+                        </a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">
+                            12
+                        </a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </main>
     <script src="js/bootstrap.bundle.js"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
 </body>
