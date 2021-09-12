@@ -290,3 +290,118 @@ main {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
+
+.card.post .post-info {
+    display: flex;
+    padding: 0 15px;
+}
+
+.card.post .post-info .info-box {
+    background: #ffffff;
+    box-shadow: 0 1px 15px rgb(49 49 49 / 20%);
+    border-radius: 10px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #4a4a4a;
+    position: relative;
+    top: -65px;
+    display: none;
+}
+
+.card.post .post-info .info-box span {
+    font-family: 'Shabnam FD'!important;
+}
+
+.card.post .post-info .info-box i {
+    font-size: 20px;
+    margin-top: 2.5px;
+}
+/* .post-info .info-box.right {
+    right: 15px;
+}
+
+.post-info .info-box.left {
+    left: 15px;
+} */
+
+.card.post:hover .info-box {
+    display: flex;
+}
+
+.trending-posts .trending-post {
+    background: rgb(85, 85, 85);
+    height: 310px;
+    box-shadow: 0 1px 20px #3131311f;
+    border-radius: 10px;
+}
+
+.trending-posts .trending-post-wrapper {
+    padding: 20px;
+}
+
+.section-break {
+    margin-top: 100px;
+}
+
+.section-intro {
+    text-align: center;
+    color: #333333;
+}
+
+.section-intro h3 {
+    font-weight: bold;
+}
+
+.section-intro p {
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.footer-header {
+    background: #25D366;
+}
+
+.footer-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    padding: 15px 10px;
+}
+
+.whatsapp-btn {
+    color: #13ae4d;
+    background: #fff;
+    border-radius: 100px;
+    padding: 8px 18px;
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+}
+
+.whatsapp-btn:hover {
+    color: #11833a;
+}
+
+.map iframe {
+    border-radius: 10px;
+    border: 1px solid #d5d5d5;
+}
+
+.footer-header .text {
+    display: flex;
+    align-items: center;
+}
+
+.footer-header .text i {
+    font-size: 45px;
+    margin-left: 12px;
+}
+
+.footer-header .text span {
+    font-size: 17px;
+    font-weight: 300;
+}
