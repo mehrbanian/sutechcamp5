@@ -275,11 +275,11 @@ main {
     line-height: 25px;
 }
 
-.card.post .post-img {
+.card .post-img {
     position: relative;
 }
 
-.card.post .post-img > .overlay {
+.card .post-img > .overlay {
     position: absolute;
     background: #626262;
     top: 0;
@@ -347,6 +347,10 @@ main {
     margin-top: 100px;
 }
 
+.section-break-md {
+    margin-top: 50px;
+}
+
 .section-intro {
     text-align: center;
     color: #333333;
@@ -404,4 +408,271 @@ main {
 .footer-header .text span {
     font-size: 17px;
     font-weight: 300;
+}
+
+.footer-main {
+    padding: 65px 20px;
+}
+
+.footer-text {
+    line-height: 28px;
+    font-weight: 300;
+    color: #4A4A4A;
+}
+
+.footer-title {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.friend-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.friend-link-item {
+    margin-bottom: 10px;
+}
+
+.friend-link {
+    display: flex;
+    align-items: center;
+    color: #4A4A4A;
+}
+
+.friend-link:hover {
+    color: #3a3a3a;
+}
+
+.friend-link i {
+    margin-left: 7px;
+}
+
+.map iframe {
+    border-radius: 10px;
+    border: 1px solid #dddddd;
+}
+
+.footer-section {
+    padding-left: 30px;
+}
+
+.footer-section:last-child {
+    padding-left: 0;
+}
+
+.social-media-links {
+    text-align: left;
+}
+
+.social-link {
+    font-size: 35px;
+    color: #b8b8b8;
+    transition: color 0.2s ease-in;
+}
+
+.social-link:hover {
+    color: #3b3b3b;
+}
+
+footer hr {
+    margin: 0;
+    color: #aaa;
+}
+
+.footer-copy-right {
+    padding: 30px 20px;
+}
+
+.footer-copy-right p {
+    margin: 0;
+}
+
+.card.single-post .card-body {
+    padding: 25px 35px;
+}
+
+.card.single-post .card-title {
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.card.single-post .card-body {
+    color: #3B3B3B;
+    font-weight: 300;
+    line-height: 26px;
+}
+
+.card.single-post .post-btns {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+}
+
+.card.single-post .post-btn {
+    width: 45px;
+    height: 45px;
+    background: #fff;
+    color: #838d91;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 1px 15px rgb(0 0 0 / 15%);
+    transition: color 0.25s ease-in;
+}
+
+.card.single-post .post-btn i {
+    font-size: 20px;
+}
+
+.card.single-post .post-btn:hover {
+    color: #3B3B3B;
+}
+
+.sidebar {
+    margin-top: 40px;
+    color: #3B3B3B;
+}
+
+@media (min-width: 992px) {
+    .sidebar {
+        padding-right: 35px;
+        margin-top: 0;
+    }
+}
+
+.sidebar .card:first-child {
+    margin-top: 30px;
+}
+
+.card.author .author-name {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+.card.author .card-body {
+    padding: 35px 40px;
+}
+
+.card.author .card-subtitle {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.card.author .bio {
+    font-size: 15px;
+    line-height: 25px;
+}
+
+.card.author .author-stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.card.author .author-stat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 1px 25px rgb(0 0 0 / 8%);
+    border-radius: 15px;
+    padding: 15px;
+    width: 90px;
+    height: 90px;
+}
+
+.card.author .author-stat span {
+    font-family: 'Shabnam FD' !important;
+}
+
+.card.author .author-stat .num {
+    font-weight: bold;
+    font-size: 36px;
+}
+
+.card.author .author-stat .text {
+    margin-top: -10px;
+    font-size: 15px;
+}
+
+.card.donate {
+    margin-top: 30px;
+    padding: 30px 35px;
+}
+
+.card.donate .card-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.card.donate .card-text {
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.card.donate input[type='number'] {
+    padding: 10px;
+}
+
+.card.donate input[type='number']::placeholder {
+    font-size: 14px;
+    text-align: right;
+}
+
+small.form-error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+}
+
+.blue-btn {
+    width: 100%;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    color: #fff;
+    border-radius: 5px;
+    background: #5ECDEC;
+}
+
+.card.donate .success-overlay {
+    position: absolute;
+    background: #6cdb35d5;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.success-overlay .content {
+    text-align: center;
+}
+
+.success-overlay .content i {
+    font-size: 85px;
+}
+
+.success-overlay .content h4 {
+    font-size: 28px;
+}
+
+.success-overlay .content p {
+    background: #fff;
+    margin-top: 15px;
+    color: #50ac23;
+    font-size: 15px;
+    border-radius: 100px;
+    padding: 2.5px 10px;
 }
