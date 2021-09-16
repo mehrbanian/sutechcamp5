@@ -34,7 +34,14 @@ Route::prefix('panel')->group( function (){
 //        $articles = DB::table('articles')->find(2);
 //        $articles = DB::table('articles')->where('slug', $slug)->first();
 
-        $articles = DB::table('articles')->insert([
+        /*foreach ( range(1, 10) as $item){
+            $articles = DB::table('posts')->insert([
+                'title'=> "Article Title $item",
+                'slug'=> "article-$item",
+                'body'=>"محتوای مقاله آموزشی $item"
+            ]);
+        }*/
+        $articles = DB::table('posts')->insert([
             'title'=> 'سومین آموزش',
             'slug'=> '3',
             'body'=>'محتوای سوم'
@@ -55,6 +62,19 @@ Route::prefix('panel')->group( function (){
 
 });
 
+//Route::prefix('posts')->group( function (){
+//Route::prefix('posts')->namespace('\App\Http\Controllers')->group( function (){
+Route::group(['prefix'=>'posts', 'namespace'=>'\App\Http\Controllers'], function (){
+
+//   Route::get('/', ['\App\Http\Controllers\PostController', 'index']);
+   Route::get('/', ['PostController', 'index']);
+
+
+//   Route::get('/', 'PostController@index'); // v5, v6
+    Route::get('/{slug}', ['PostController', 'single']);
+//    Route::get('/{slug}', ['\App\Http\Controllers\PostController', 'single']);
+
+});
 
 
 
