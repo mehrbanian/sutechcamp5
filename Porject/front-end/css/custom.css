@@ -61,6 +61,14 @@ a {
     border-color: unset;
 }
 
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-footer {
+    border-top: none;
+}
+
 /* Bootstrap customization end */
 
 header {
@@ -675,4 +683,221 @@ small.form-error {
     font-size: 15px;
     border-radius: 100px;
     padding: 2.5px 10px;
+}
+
+.need-vip {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.need-vip .blurred-bg {
+    filter: blur(5px);
+    user-select: none;
+}
+
+.need-vip .vip-box {
+    max-width: 280px;
+    background-color: #FFD96E;
+    color: #533200;
+    background-image: url('../svgs/vip-pattern.svg');
+    background-position: center;
+    position: absolute;
+    z-index: 1;
+    border-radius: 15px;
+    box-shadow: 0 1px 20px rgb(90 67 2 / 15%);
+    padding: 30px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.vip-box .icons {
+    font-size: 95px;
+    color: #785E37;
+}
+
+.vip-box .text {
+    margin: 15px 0;
+}
+
+.vip-box .btn-upgrade {
+    background: #fff;
+    width: 100%;
+}
+
+.upgrade-acc {
+    padding: 0 25px;
+}
+
+.upgrade-acc input[type='radio'] {
+    display: none;
+}
+
+.upgrade-acc input[type='radio']:checked + .plan-content {
+    background: #ffd55f;
+    color: #533200;
+    transform: scale(102%);
+}
+
+.upgrade-acc input[type='radio']:checked + .plan-content > .icon {
+    background: #f8f8f8;
+    color: #e1b026;
+}
+
+.upgrade-acc input[type='radio']:checked + .plan-content > .price {
+    color: #c79c28;
+}
+
+.upgrade-acc .plan-content {
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.plan {
+    margin-bottom: 20px;
+}
+
+.plan-content .icon {
+    background: #3d3d3d;
+    color: #fff;
+    width: 55px;
+    height: 55px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: all 0.2s ease-in-out;
+}
+
+.plan-content .text {
+    margin-right: 15px;
+}
+
+.plan-content .plan-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.plan-content .plan-desc {
+    margin-bottom: 0;
+    font-size: 15px;
+    font-family: 'Shabnam FD';
+}
+
+.plan-content .price {
+    background: #f8f8f8;
+    padding: 5px 20px;
+    border-radius: 25px;
+    margin-right: auto;
+    font-family: 'Shabnam FD';
+    transition: color 0.2s ease-in-out;
+}
+
+.upgrade-modal {
+    color: #3d3d3d;
+}
+
+.payment-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.payment-info .info h6 {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.payment-info .info h6 span {
+    font-family: 'Shabnam FD';
+}
+
+.payment-info .info a {
+    font-size: 14px;
+}
+
+.payment-info button {
+    border: none;
+    padding: 10px 30px;
+    border-radius: 100px;
+    background: #3d3d3d;
+    color: #fff;
+}
+
+.payment-info button i {
+    position: relative;
+    top: 2px;
+    margin-left: 3px;
+}
+
+.rate-modal .feedback {
+    box-shadow: none;
+    background: unset;
+}
+
+.comment-section {
+    padding: 30px 35px;
+}
+
+.comment-section .section-header > h4 {
+    margin-bottom: 5px;
+}
+
+.comment-section .section-header > p {
+    margin-bottom: 25px;
+}
+
+.comments-container {
+    margin-top: 35px;
+}
+
+.commtent-box {
+    display: flex;
+    align-items: flex-start;
+}
+
+.comment-user {
+    max-width: 50px;
+    border-radius: 15px;
+    display: block;
+}
+
+.comment-editor {
+    flex-grow: 1;
+    margin-right: 20px;
+}
+
+.comment-wrapper > .comment-wrapper {
+    margin-right: 30px;
+}
+
+.comment-wrapper > .comment {
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.comment-text {
+    font-weight: 300;
+    font-size: 15px;
+    margin-right: 15px;
+}
+
+.comment-author {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 3px;
+    margin-top: 5px;
+}
+
+.comment-date {
+    color: #a8a8a8;
+    font-size: 14px;
+    margin-bottom: 10px;
 }
