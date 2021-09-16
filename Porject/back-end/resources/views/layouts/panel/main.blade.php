@@ -127,14 +127,14 @@
                 <!-- end page title -->
 
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-9">
                         <div class="card">
                             <div class="card-body">
                                 @yield('content-right')
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-3">
                         <div class="card">
                             <div class="card-body">
                                 @yield('content-left')

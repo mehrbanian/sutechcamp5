@@ -27,7 +27,23 @@ Route::get('/news/{query}', function ($query) {
     ]);
 });
 
-Route::prefix('panel')->group( function (){
+// front
+Route::prefix('posts')->group( function (){
+
+   Route::get('/', 'PostController@index');
+   Route::get('/{slug}', 'PostController@single');
+
+});
+
+//Route::prefix('posts')->group( function (){
+//Route::prefix('posts')->namespace('\App\Http\Controllers')->group( function (){
+//   Route::get('/', ['\App\Http\Controllers\PostController', 'index']);
+//   Route::get('/', 'PostController@index'); // v5, v6
+//    Route::get('/{slug}', ['\App\Http\Controllers\PostController', 'single']);
+
+
+// Panel
+Route::group(['prefix'=>'panel', 'namespace'=>'Admin'] ,function (){
 
     Route::get('/', function () {
 //        $articles = DB::table('articles')->get();
@@ -56,23 +72,15 @@ Route::prefix('panel')->group( function (){
         return 'Add new User';
     });
 
-    Route::get('/news', function () {
-        return view('panel.news');
+    Route::prefix('posts')->group(function (){
+
+        Route::get('/', 'PostController@index');
+        Route::get('/new', 'PostController@new');
+        Route::post('/new', 'PostController@add');
+        Route::get('/{id}/edit', 'PostController@edit');
+        Route::post('/{id}/edit', 'PostController@update');
+        Route::get('/{id}/delete', 'PostController@delete');
     });
-
-});
-
-//Route::prefix('posts')->group( function (){
-//Route::prefix('posts')->namespace('\App\Http\Controllers')->group( function (){
-Route::group(['prefix'=>'posts', 'namespace'=>'\App\Http\Controllers'], function (){
-
-//   Route::get('/', ['\App\Http\Controllers\PostController', 'index']);
-   Route::get('/', ['PostController', 'index']);
-
-
-//   Route::get('/', 'PostController@index'); // v5, v6
-    Route::get('/{slug}', ['PostController', 'single']);
-//    Route::get('/{slug}', ['\App\Http\Controllers\PostController', 'single']);
 
 });
 
