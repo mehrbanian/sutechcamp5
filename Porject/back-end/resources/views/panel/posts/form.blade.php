@@ -4,22 +4,8 @@
 
 @section('content-right')
     <h5>خلق کنید! :)</h5>
-
-    @if(session('success'))
-        <div class="alert alert-success"><p>عملیات با موفقیت انجام شد.</p></div>
-    @endif
-
-
-    @if( $errors->any() )
-        <div class="alert alert-danger">
-            <ul>
-                @foreach($errors->all() as $error)
-                    <li>{{$error}}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
+    @include('partials.notifications')
+    @include('partials.errors')
     <form action="" method="POST">
         <div class="form-group">
             @csrf

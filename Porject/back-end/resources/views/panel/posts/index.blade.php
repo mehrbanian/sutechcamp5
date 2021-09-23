@@ -24,8 +24,8 @@
                     <th scope="row">{{$loop->iteration}}</th>
                     <td>{{$post->title}}</td>
                     <td>{{$post->updated_at}}</td>
-                    <td><a href="http://localhost:8000/panel/posts/{{$post->id}}/edit">ویرایش</a> |
-                        <a href="http://localhost:8000/panel/posts/{{$post->id}}/delete">حذف</a></td>
+                    <td><a href="{{route('panel.posts.edit', $post->id)}}">ویرایش</a> |
+                        <a href="{{route('panel.posts.delete', ['id'=>$post->id])}}">حذف</a></td>
                 </tr>
                 @endforeach
             @endif

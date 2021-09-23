@@ -50,12 +50,25 @@
                                         <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-components"
                                            role="button" data-toggle="dropdown" aria-haspopup="true"
                                            aria-expanded="false">
-                                            مدیریت کاربران
+                                            پست‌ها
                                             <div class="arrow-down"></div>
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="topnav-dashboard">
-                                            <a href="#" class="dropdown-item">همه کاربران</a>
-                                            <a href="#" class="dropdown-item">افزودن کاربر</a>
+                                            <a href="{{route('panel.posts')}}" class="dropdown-item">همه پست‌ها</a>
+                                            <a href="{{route('panel.posts.new')}}" class="dropdown-item">افزودن پست جدید</a>
+                                        </div>
+                                    </li>
+
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-components"
+                                           role="button" data-toggle="dropdown" aria-haspopup="true"
+                                           aria-expanded="false">
+                                            کاربران
+                                            <div class="arrow-down"></div>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="topnav-dashboard">
+                                            <a href="{{route('panel.users')}}" class="dropdown-item">همه کاربران</a>
+                                            <a href="{{route('panel.users.new')}}" class="dropdown-item">افزودن کاربر</a>
                                             <a href="#" class="dropdown-item">آمار سایت</a>
                                         </div>
                                     </li>

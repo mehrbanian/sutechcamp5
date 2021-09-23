@@ -4,8 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Post;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
@@ -108,6 +106,6 @@ class PostController extends Controller
         /*if (is_null($post))
             return redirect('http://localhost:8000/panel/posts/')->with(['success'=>false]);*/
         $post->delete();
-        return redirect('http://localhost:8000/panel/posts/')->with(['success'=>true]);
+        return redirect()->route('panel.posts')->with(['success'=>true]);
     }
 }
