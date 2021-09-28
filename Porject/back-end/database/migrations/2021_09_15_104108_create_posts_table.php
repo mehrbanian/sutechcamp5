@@ -16,6 +16,7 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('category_id');
             $table->string('title', 255);
             $table->string('slug', 255)->unique();
             $table->text('content');
@@ -25,6 +26,8 @@ class CreatePostsTable extends Migration
             $table->double('rate',2,1)->default(0);
             $table->integer('raters')->default(0);
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

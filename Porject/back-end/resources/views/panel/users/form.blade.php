@@ -16,7 +16,7 @@
             <label>پسورد:</label>
             <input name="password" value="" type="text" class="form-control"> {{--type:password--}}
 
-            {{--Ex: --}}
+            {{--Ex: selected based on old|$user->role --}}
             <label>نقش کاربر:</label>
             <select name="role" class="form-control">
                 <option value="3">کاربر معمولی</option>

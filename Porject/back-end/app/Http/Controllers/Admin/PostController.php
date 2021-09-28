@@ -16,69 +16,29 @@ class PostController extends Controller
     }
 
     public function add() {
-        /*$post = new Post();
-        $post->title = request('title');
-        $post->slug = request('slug');
-        $post->content = request('content');
-        $post->image = request('image');
-        $post->save();*/
-
-        /*$post = Post::create([
-            'title' => request('title'),
-            'slug' => request('slug'),
-            'content' => request('content'),
-            'image' => request('image')
-        ]);*/
-
-
-        /*$validatedObj = Validator::make(request()->all(), [
-            'title'   => 'required|min:5|max:255',
-            'slug'    => 'required|min:3',
-            'content' => 'required',
-            'image'   => 'required'
-        ]);
-        if ($validatedObj->fails())
-//            return redirect('http://localhost:8000');
-//            return redirect()->back()->with(['errors'=>$validatedObj]);
-            return redirect()->back()->withErrors($validatedObj);
-
-        Post::create($validatedObj->validated());
-        return redirect()->back();*/
-
-        /*$obj = Validator::make(request()->all(), [
-            'title'   => 'required|min:5|max:255',
-            'slug'    => 'required|min:3',
-            'content' => 'required',
-            'image'   => 'required'
-        ])->validate();*/
-
-        /*$data = Validator::make(request()->all(), [
-            'title'   => 'required|min:5|max:255',
-            'slug'    => 'required|min:3',
-            'content' => 'required',
-            'image'   => 'required'
-        ])->validated();*/
-
-        /*$data = $this->validate(request(), [
-            'title'   => 'required|min:5|max:255',
-            'slug'    => 'required|min:3',
-            'content' => 'required',
-            'image'   => 'required'
-            //'email'   => 'required|email'
-        ]);*/
-
         $data = $this->validate(request(), [
-            'title'   => 'required|min:5|max:255',
-            'slug'    => 'required|min:3',
+            'title'   => 'required|min:3|max:255',
+            'slug'    => 'required|min:3|max:254',
             'content' => 'required',
-            'image'   => 'required'
-            //'email'   => 'required|email'
+            'category_id' => 'required',
+            'user_id' => 'required',
+            'type' => 'required',
+//            'thumbnail' => 'required|max:20480'
         ], [
             'title.required' => 'وارد کردن عنوان الزامی است.',
-            'title.min' => 'عنوان حداقل باید ۵ کاراکتر باشد.'
+            'title.min' => 'عنوان حداقل باید ۳ کاراکتر باشد.'
         ]);
+        $post = Post::create($data);
 
-        Post::create($data);
+        // store, storeAs, and:
+        $file_name = time() . '.' . request()->file('thumbnail')->extension();
+//        $file_name = time() . '.' . request()->file('thumbnail')->getClientOriginalName();
+        /* Ex: file_name-time() */
+        request()->file('thumbnail')->move(public_path('uploads/thumbnails'), $file_name);
+
+        $post->thumbnail = $file_name;
+        $post->save();
+
         return redirect()->back()->with(['success'=>true]);
     }
 
@@ -90,21 +50,17 @@ class PostController extends Controller
     public function update($id) {
         $data = $this->validate(request(), [
             'title'   => 'required|min:5|max:255',
-            'slug'    => 'required|min:3',
+            'slug'    => 'required|min:3|max:254',
             'content' => 'required',
-            'image'   => 'required'
+            'thumbnail'   => 'required'
         ]);
         $post = Post::find($id);
         $post->update($data);
-        return redirect('http://localhost:8000/panel/posts/')->with(['success'=>true]);
+        return redirect()->route('panel.posts')->with(['success'=>true]);
     }
 
     public function delete($id) {
-//        $post = Post::find($id);
         $post = Post::findOrFail($id);
-
-        /*if (is_null($post))
-            return redirect('http://localhost:8000/panel/posts/')->with(['success'=>false]);*/
         $post->delete();
         return redirect()->route('panel.posts')->with(['success'=>true]);
     }

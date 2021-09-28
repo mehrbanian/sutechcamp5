@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('home', [
         'title'=>'صفحه اصلی سایت من'
     ]);
-});
+})->name('home');
 
 Route::get('/news/{query}', function ($query) {
     return view('home', [
@@ -31,7 +31,7 @@ Route::get('/news/{query}', function ($query) {
 Route::prefix('posts')->group( function (){
 
    Route::get('/', 'PostController@index');
-   Route::get('/{slug}', 'PostController@single');
+   Route::get('/{post:slug}', 'PostController@single');
 
 });
 
@@ -100,35 +100,4 @@ Route::group(['prefix'=>'panel', 'namespace'=>'Admin'] ,function (){
 });
 
 
-
-
-Route::get('/dump', function (){
-    foreach ( range(1, 10) as $i ){
-        DB::table('posts')->insert([
-            'title' => "مقاله شماره $i",
-            'slug' => "article-$i",
-            'content' => "متن آزمایشی $i برای نوشته‌های $i سایت",
-            'user_id' => 1,
-            'type' => rand(1,2),
-            'created_at' => now(),
-            'updated_at' => now()
-        ]);
-    }
-    $names = ['امید', 'غزل', 'ایمان', 'نگار'];
-    $mails = ['omid', 'ghazal', 'eiman', 'negar'];
-    $wallets = [25000, 37000, 15000, 11000];
-    $roles = [1, 2, 3, 1];
-    foreach ( range(0,3) as $i ){
-        DB::table('users')->insert([
-            'name' => $names[$i],
-            'email' => "$mails[$i]@local.com",
-            'wallet' => $wallets[$i],
-            'role' => $roles[$i],
-            'password' => '123',
-            'bio' => "بیوگرافی کوتاه $names[$i]"
-        ]);
-    }
-
-    dd('Done!');
-});
 
