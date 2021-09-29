@@ -3,6 +3,7 @@
 /public/storage
 /public/css/panel-styles.css
 /public/images
+/public/assets
 /storage/*.key
 /vendor
 .env

@@ -13,12 +13,17 @@ class PostController extends Controller
 //       $posts = DB::table('posts')->get();
 //       $posts = Post::orderBy('id', 'DESC')->get();
 
-        $posts = Post::all();
+        $posts = Post::limit(5)->get();
         return view('home', ['posts'=>$posts]);
     }
 
-    public function single($slug) {
-        $post = Post::where('slug', $slug)->first();
-        dd($post);
+//    public function single($slug) {
+//        $post = Post::where('slug', $slug)->first();
+
+    public function single(Post $post) {
+
+
+        dd($post->category->name);
+
     }
 }

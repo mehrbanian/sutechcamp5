@@ -4,39 +4,7 @@
 @section('panel-title', 'مدیریت کاربران')
 
 @section('content-right')
-    <h4 class="card-title">مدیریت کاربران</h4>
-    <p class="card-title-desc">کاربران سایت در جدول زیر نمایش داده شده‌اند، شما می‌توانید آن‌ها را
-        مدیریت کنید.</p>
 
-    <div class="table-responsive">
-        <table class="table table-hover mb-0">
-
-            <thead>
-            <tr>
-                <th>#</th>
-                <th>نام</th>
-                <th>ایمیل</th>
-                <th>عملیات</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>امید</td>
-                <td>ر</td>
-                <td><a href="#">ویرایش</a> |
-                    <a href="#">حذف</a></td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>غزل</td>
-                <td>کبیری</td>
-                <td><a href="#">ویرایش</a> |
-                    <a href="#">حذف</a></td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
 @endsection
 
 @section('content-left')
