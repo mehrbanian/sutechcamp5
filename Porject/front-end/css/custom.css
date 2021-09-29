@@ -39,9 +39,35 @@ a {
 
 .pagination {
     justify-content: center;
+    background: #fff;
+    max-width: 320px;
+    margin: auto;
+    padding: 10px 5px;
+    box-shadow: 0 1px 10px rgb(39 39 39 / 10%);
+    border-radius: 100px;
 }
 
 .page-link {
+    border: none;
+    color: #515151;
+    margin: 0 10px;
+}
+
+.page-item.active .page-link {
+    background: #585858;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    text-align: center;
+}
+
+.page-link:hover {
+    background-color: unset;
+    border-color: unset;
+    color: #1e6274;
+}
+
+/* .page-link {
     border: none;
     margin: 0 10px;
     box-shadow: 0 1px 10px rgb(39 39 39 / 15%);
@@ -59,7 +85,7 @@ a {
     color: #2e2e2e;
     background-color: #d1d1d1;
     border-color: unset;
-}
+} */
 
 .modal-header {
     border-bottom: none;
