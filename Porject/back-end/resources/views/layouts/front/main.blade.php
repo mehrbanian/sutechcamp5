@@ -4,24 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>صفحه اصلی</title>
+    <title>@yield('title')</title>
 
     <link rel=" stylesheet" href="{{route('home')}}/assets/css/bootstrap.rtl.min.css">
-    <link rel=" stylesheet" href="{{route('home')}}/assets/css/fontawesome.min.css">
+    <link rel=" stylesheet" href="{{route('home')}}/assets/css/all.min.css">
     <link rel=" stylesheet" href="{{route('home')}}/assets/css/animate.min.css">
     <link rel="stylesheet" type="text/css" href="{{route('home')}}/assets/css/slick.css">
     <link rel="stylesheet" type="text/css" href="{{route('home')}}/assets/css/slick-theme.css">
     <link href="{{route('home')}}/assets/css/aos.css" rel="stylesheet">
+    <link href="{{route('home')}}/assets/css/rating-stars.css" rel="stylesheet">
     <link rel=" stylesheet" href="{{route('home')}}/assets/css/custom.css">
 </head>
 
 <body dir="rtl">
 <header>
-
     <div class="container">
         <div class="row">
             <div class="col-6 header-right">
-                <a href="#">
+                <a href="{{route('home')}}">
                     <img src="{{route('home')}}/assets/img/SUTCAMPLogo.png" class="logo" alt="">
                 </a>
                 <div class="search-bar">
@@ -30,16 +30,17 @@
                 </div>
             </div>
             <div class="col-6 header-left">
+                @auth
                 <div class="user-bar">
                     <div class="avatar">
-                        <img src="{{route('home')}}/assets/img/profile.jpg" alt="">
+                        <img src="{{route('uploads', 'profiles')}}/{{auth()->user()->avatar}}" alt="">
                         <div class="overlay"></div>
                     </div>
                     <div class="user-info">
                         <div class="dropdown">
                             <a class="usermenu" href="#" role="button" id="usermenu" data-bs-toggle="dropdown"
                                aria-expanded="false">
-                                <span>عباس مهربانیان</span>
+                                <span>{{Auth::user()->name}}</span>
                                 <i class="fas fa-sort-down"></i>
                             </a>
 
@@ -52,17 +53,19 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="#">
+                                    <form action="{{route('logout')}}" method="POST" id="logout_frm">
+                                        @csrf
+                                    <a class="dropdown-item" onclick="document.getElementById('logout_frm').submit();" href="#">
                                         <i class="fas fa-sign-out-alt"></i>
                                         <span>خروج از حساب</span>
                                     </a>
+                                    </form>
                                 </li>
                             </ul>
                         </div>
                         <div class="account-type">اشتراک عادی</div>
                     </div>
                 </div>
-
                 <div class="dropdown notif-bell">
                     <a class="notifmenu-btn" href="#" role="button" id="notifmenu" data-bs-toggle="dropdown"
                        aria-expanded="false">
@@ -84,6 +87,9 @@
                         </li>
                     </ul>
                 </div>
+                @else
+                <a href="{{route('login')}}" class="btn btn-info">ورود</a>
+                @endauth
             </div>
         </div>
     </div>
@@ -92,48 +98,41 @@
     <div class="container">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
+                aria-label="منوی ناوبری">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">صفحه اصلی</a>
+                    <a class="nav-link active" aria-current="index" href="#">صفحه اصلی</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">درباره ما</a>
                 </li>
-                <!-- <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                </li> -->
                 <li class="nav-item">
-                    <a class="nav-link">سوالات متداول</a>
+                    <a class="nav-link" href="#">سوالات متداول</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link">تماس با ما</a>
+                    <a class="nav-link" href="#">تماس با ما</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link">دسته بندی‌ها</a>
+                    <a class="nav-link" href="#">دسته بندی‌ها</a>
                 </li>
             </ul>
+            @auth
+                @php
+                if(!auth()->user()->is_vip()){
+                @endphp
+                <button class="btn-upgrade" type="submit" data-bs-toggle="modal" data-bs-target="#upgrade_account">
+                    <i class="fas fa-crown"></i>
+                    <span>ویژه شوید!</span>
+                </button>
+                @include('partials.modal.vip')
+                @php
+                }
+                @endphp
+            @endauth
         </div>
-        <form class="d-flex">
-            <button class="upgrade-btn" type="submit">
-                <i class="fas fa-crown"></i>
-                <span>ویژه شوید!</span>
-            </button>
-        </form>
     </div>
 </nav>
 
@@ -226,15 +225,14 @@
 
 <script src="{{route('home')}}/assets/js/bootstrap.bundle.min.js"></script>
 <script src="{{route('home')}}/assets/js/jquery-3.6.0.min.js"></script>
-<script src="{{route('home')}}/assets/js/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="{{route('home')}}/assets/js/slick.min.js"></script>
 <script src="{{route('home')}}/assets/js/aos.js"></script>
-
 <script>
     $(document).ready(function () {
         AOS.init();
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip()
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
         });
 
         $('.trending-posts').slick({
@@ -246,6 +244,7 @@
         });
     });
 </script>
+@yield('footer')
 </body>
 
 </html>

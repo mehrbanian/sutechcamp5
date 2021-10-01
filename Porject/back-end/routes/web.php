@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,26 +15,21 @@ use Illuminate\Support\Facades\DB;
 |
 */
 
-Route::get('/', function () {
-    return view('home', [
-        'title'=>'صفحه اصلی سایت من'
-    ]);
-})->name('home');
+Route::get('/', 'PostController@index')->name('home');
 
-Route::get('/news/{query}', function ($query) {
-    return view('home', [
-        'query'=>$query,
-        'users'=>['omid', 'sara', 'ehsan', 'negar']
-    ]);
-});
+Route::get('/uploads/{folder}/')->name('uploads');
+
 
 // front
 Route::prefix('posts')->group( function (){
 
    Route::get('/', 'PostController@index');
-   Route::get('/{post:slug}', 'PostController@single');
+   Route::get('/{post:slug}', 'PostController@single')->name('posts.single');
 
 });
+
+Route::post('/subscribe', 'SubscribeController@new')->name('subs.new');
+
 
 //Route::prefix('posts')->group( function (){
 //Route::prefix('posts')->namespace('\App\Http\Controllers')->group( function (){
@@ -43,7 +39,8 @@ Route::prefix('posts')->group( function (){
 
 
 // Panel
-Route::group(['prefix'=>'panel', 'namespace'=>'Admin'] ,function (){
+Route::group(['prefix'=>'panel', 'namespace'=>'Admin', 'middleware'=>'AdminAuth'] ,function (){
+//Route::group(['prefix'=>'panel', 'namespace'=>'Admin'] ,function (){
 
     /*Route::get('/', function () {
 //        $articles = DB::table('articles')->get();
@@ -80,6 +77,7 @@ Route::group(['prefix'=>'panel', 'namespace'=>'Admin'] ,function (){
 
     Route::prefix('posts')->group(function (){
 
+//        Route::get('/', 'PostController@index')->name('panel.posts')->middleware('auth');
         Route::get('/', 'PostController@index')->name('panel.posts');
         Route::get('/new', 'PostController@new')->name('panel.posts.new');
         Route::post('/new', 'PostController@add');
@@ -99,5 +97,23 @@ Route::group(['prefix'=>'panel', 'namespace'=>'Admin'] ,function (){
 
 });
 
+Auth::routes();
 
+
+Route::get('/test', function (){
+//    $result = Auth::attempt(['email'=>'omid@yahoo.com', 'password'=>'123456789']);
+
+//    dd($result);
+//    dd(Auth::check());
+
+//    dd(auth()->user());
+
+
+    // @auth
+    /*if (Auth::check()){
+        Auth::user()->name;
+    }*/
+
+//    dd(auth()->user()->subscribes()->first()->expired_at);
+});
 

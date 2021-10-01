@@ -8,9 +8,13 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
-{
+class User extends Authenticatable {
     use HasApiTokens, HasFactory, Notifiable;
+
+
+    public const ADMIN = 1;
+    public const AUTHOR = 2;
+    public const USER = 3;
 
     /**
      * The attributes that are mass assignable.
@@ -47,4 +51,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function posts(){
+        $this->hasMany(Post::class);
+    }
+
+    public function subscribes() {
+        return $this->hasMany(Subscribe::class);
+    }
+
+    public function is_vip() {
+        $sub = $this->subscribes()->where('expired_at', '>', now())->first();
+        if (is_null($sub))
+            return false;
+        return true;
+    }
 }

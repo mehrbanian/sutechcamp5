@@ -7,6 +7,11 @@ use App\Models\Post;
 
 class PostController extends Controller
 {
+    public function __construct() {
+//        $this->middleware = ['',''];
+        $this->middleware('auth');
+    }
+
     public function index() {
         return view('panel.posts.index', ['posts'=>Post::all()]);
     }
